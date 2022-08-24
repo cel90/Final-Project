@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.shoppingapp.dao.CustomerDao;
-import com.shoppingapp.entity.customer;
+import com.shoppingapp.entity.Customer;
 import com.shoppingapp.entity.OrdersByCustomer;
 import com.shoppingapp.service.CustomerService;
 import com.shoppingapp.service.OrdersService;
@@ -44,7 +44,7 @@ public class CustomerController {
               @ApiResponse(responseCode = "200", 
                   description = "List of customers is returned", 
                   content = @Content (mediaType = "application/json", 
-                  schema = @Schema(implementation = customer.class))),             
+                  schema = @Schema(implementation = Customer.class))),             
               @ApiResponse(responseCode = "404",
                   description = "customers Not found", 
                   content = @Content (mediaType = "application/json") ),
@@ -63,9 +63,9 @@ public class CustomerController {
  //  return customerService.cstmr();
  
      @GetMapping("/allcustomers") 
-public ResponseEntity<List<customer>> getAll () {
+public ResponseEntity<List<Customer>> getAll () {
   try {
-    List<customer> cust = new ArrayList<customer>();
+    List<Customer> cust = new ArrayList<Customer>();
    
     customerService.cstmr().forEach(cust::add);
     if (cust.isEmpty()) {

@@ -1,11 +1,11 @@
 package com.shoppingapp.dao;
 
 import java.util.List;
-import com.shoppingapp.entity.products;
+import com.shoppingapp.entity.Products;
 
 public interface ProductDao {
 
-  List<products> prdct () ;
+  List<Products> prdct () ;
 
   int save(String product_name, double price);
   int delete(int product_id) ;

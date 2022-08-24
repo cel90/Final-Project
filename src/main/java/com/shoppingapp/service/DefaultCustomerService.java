@@ -4,7 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.shoppingapp.dao.CustomerDao;
-import com.shoppingapp.entity.customer;
+import com.shoppingapp.entity.Customer;
 
 @Service
 
@@ -14,9 +14,9 @@ public class DefaultCustomerService implements CustomerService {
   
   private CustomerDao customerDao ;
   
-  public List<customer> cstmr()  {
+  public List<Customer> cstmr()  {
  
-    List<customer> customers = customerDao.cstmr()   ;
+    List<Customer> customers = customerDao.cstmr()   ;
         return customers ;
   }
 

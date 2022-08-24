@@ -6,16 +6,16 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.shoppingapp.entity.products;
+import com.shoppingapp.entity.Products;
 
 @Service
 public class DefaultProductDao implements ProductDao {
   @Autowired
   private JdbcTemplate jdbcTemplate ;
   @Override
-  public List<products> prdct() {
+  public List<Products> prdct() {
     
-    return  jdbcTemplate.query("select * from products ", BeanPropertyRowMapper.newInstance(products.class)) ; 
+    return  jdbcTemplate.query("select * from products ", BeanPropertyRowMapper.newInstance(Products.class)) ; 
     
   }
   @Override

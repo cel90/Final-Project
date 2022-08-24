@@ -10,11 +10,15 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class order_product {
+public class Order_product {
 
   
  private  int id  ;
   private int quantity ;
+  private int order ;
+  private int product ;
+  private int customer ;
+  
  // private 
   
   @JsonIgnore 

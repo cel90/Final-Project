@@ -10,15 +10,13 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class customer {
+public class Customer {
 
   private int customer_id ;
   private String first_name ; 
   private String last_name ;
   private String phone ;
   
-  //@MappedCollection (keyColumn = "order_id", idColumn = "customer_id")
- // private int order_id ;
   @JsonIgnore 
   public int getcustomerid() {
    

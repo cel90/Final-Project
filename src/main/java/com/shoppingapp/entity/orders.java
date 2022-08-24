@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class orders {
+public class Orders {
    private int id ;
-   private customer cstmr ;
+   private int cstmr ;
 }

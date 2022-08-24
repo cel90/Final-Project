@@ -4,16 +4,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.shoppingapp.dao.ProductDao;
-import com.shoppingapp.entity.products;
+import com.shoppingapp.entity.Products;
 
 @Service
 public class DefaultProductsService implements ProductService {
   @Autowired
   private  ProductDao productDao ;
   
-  public List<products> prdct()  {
+  public List<Products> prdct()  {
     
-    List<products> pr = productDao.prdct()   ;
+    List<Products> pr = productDao.prdct()   ;
         return pr ;
   }
   public int save ( String product_name, double price) {

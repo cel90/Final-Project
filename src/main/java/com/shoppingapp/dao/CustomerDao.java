@@ -1,9 +1,9 @@
 package com.shoppingapp.dao;
 
 import java.util.List;
-import com.shoppingapp.entity.customer;
+import com.shoppingapp.entity.Customer;
 
 public interface CustomerDao {
 
-  List<customer> cstmr () ;
+  List<Customer> cstmr () ;
 }

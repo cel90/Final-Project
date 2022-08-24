@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
-import com.shoppingapp.entity.customer;
+import com.shoppingapp.entity.Customer;
 
 
 @Service
@@ -21,7 +21,7 @@ public class DefaultCustomerDao implements CustomerDao {
   private JdbcTemplate jdbcTemplate ;
   
   @Override
-  public List<customer> cstmr() { 
+  public List<Customer> cstmr() { 
   //  log.debug("DAO: id={} ", id);
   // @formatter:off
  // String sql = ""
@@ -33,7 +33,7 @@ public class DefaultCustomerDao implements CustomerDao {
   
  // params.put("customer_id", id) ;
 // select c.customer_id, c.first_name, c.last_name, c.phone, o.order_id from customer c left join  orders o on  c.customer_id = o.customer_id  where o.order_id is not null
- return  jdbcTemplate.query("select c.customer_id, c.first_name, c.last_name, c.phone, o.order_id from customer c left join  orders o on  c.customer_id = o.customer_id  where o.order_id ", BeanPropertyRowMapper.newInstance(customer.class)) ;
+ return  jdbcTemplate.query("select * from customer", BeanPropertyRowMapper.newInstance(Customer.class)) ;
  
   //  return jdbcTemplate.query("select c.customer_id, c.first_name, c.last_name, c.phone, o.order_id from customer c left join  orders o on  c.customer_id = o.customer_id" ,
       //  new RowMapper<> () {

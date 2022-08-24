@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.shoppingapp.entity.OrdersByCustomer;
-import com.shoppingapp.entity.products;
+import com.shoppingapp.entity.Products;
 import com.shoppingapp.service.ProductService;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
@@ -43,7 +43,7 @@ public class ProductsController {
           @ApiResponse(responseCode = "200", 
               description = "List of products is returned", 
               content = @Content (mediaType = "application/json", 
-              schema = @Schema(implementation = products.class))),             
+              schema = @Schema(implementation = Products.class))),             
           @ApiResponse(responseCode = "404",
               description = "Not found", 
               content = @Content (mediaType = "application/json") ),
@@ -54,10 +54,10 @@ public class ProductsController {
      
       )
   @GetMapping("/all") 
-  public ResponseEntity<List<products>> getAllproducts() {
+  public ResponseEntity<List<Products>> getAllproducts() {
     
     try {
-      List<products> pr = new ArrayList<products>();
+      List<Products> pr = new ArrayList<Products>();
      
       productService.prdct().forEach(pr::add);
       if (pr.isEmpty()) {
@@ -76,7 +76,7 @@ public class ProductsController {
           @ApiResponse(responseCode = "201", 
               description = " product was created successfully ", 
               content = @Content (mediaType = "application/json", 
-              schema = @Schema(implementation = products.class))),             
+              schema = @Schema(implementation = Products.class))),             
           @ApiResponse(responseCode = "500",
               description = "An unplanned error occured",  
               content = @Content (mediaType = "application/json") )
@@ -105,7 +105,7 @@ public class ProductsController {
           @ApiResponse(responseCode = "201", 
               description = " product was deleted successfully ", 
               content = @Content (mediaType = "application/json", 
-              schema = @Schema(implementation = products.class))),  
+              schema = @Schema(implementation = Products.class))),  
           @ApiResponse(responseCode = "404",
           description = "Not found", 
           content = @Content (mediaType = "application/json") ),
@@ -138,7 +138,7 @@ public class ProductsController {
           @ApiResponse(responseCode = "201", 
               description = " product was updated successfully ", 
               content = @Content (mediaType = "application/json", 
-              schema = @Schema(implementation = products.class))),  
+              schema = @Schema(implementation = Products.class))),  
           @ApiResponse(responseCode = "404",
           description = "Not found", 
           content = @Content (mediaType = "application/json") ),
