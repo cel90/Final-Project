@@ -91,10 +91,10 @@ public class ProductsController {
      
       productService.save(product_name, price) ;
      
-        return new ResponseEntity<>("product was created successfully ", HttpStatus.CREATED) ;
+        return new ResponseEntity<>( HttpStatus.CREATED) ;
       
     } catch (Exception e) {
-      return new ResponseEntity<> ("An unplanned error occured", HttpStatus.INTERNAL_SERVER_ERROR);
+      return new ResponseEntity<> (HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
   
@@ -123,12 +123,12 @@ public class ProductsController {
      
      int rs =  productService.delete(product_id) ;
      if (rs == 0) {
-       return new ResponseEntity<>("no product available ",HttpStatus.NOT_FOUND) ;
+       return new ResponseEntity<>(HttpStatus.NOT_FOUND) ;
      }
-        return new ResponseEntity<>("product was deleted successfully ", HttpStatus.CREATED) ;
+        return new ResponseEntity<>( HttpStatus.CREATED) ;
       
     } catch (Exception e) {
-      return new ResponseEntity<> ("An unplanned error occured", HttpStatus.INTERNAL_SERVER_ERROR);
+      return new ResponseEntity<> ( HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
   @Operation (
@@ -156,12 +156,12 @@ public class ProductsController {
      
      int rs =  productService.update(product_id, product_name,  price) ;
      if (rs == 0) {
-       return new ResponseEntity<>("no product available ",HttpStatus.NOT_FOUND) ;
+       return new ResponseEntity<>(HttpStatus.NOT_FOUND) ;
      }
-        return new ResponseEntity<>("updated successfully !! ",HttpStatus.CREATED) ;
+        return new ResponseEntity<>(HttpStatus.CREATED) ;
       
     } catch (Exception e) {
-      return new ResponseEntity<> ("An unplanned error occured", HttpStatus.INTERNAL_SERVER_ERROR);
+      return new ResponseEntity<> (HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
   

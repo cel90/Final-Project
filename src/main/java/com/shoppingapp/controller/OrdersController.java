@@ -99,11 +99,11 @@ public class OrdersController {
       
       
      
-        return new ResponseEntity<>("order was created successfully ", HttpStatus.CREATED) ;
+        return new ResponseEntity<>(HttpStatus.CREATED) ;
       
     } catch (Exception e) {
       orderProductService.deleteorder(order) ;
-      return new ResponseEntity<> ("An unplanned error occured or Customer id doesn't exist or Product id doesn't exist or order id already used ", HttpStatus.INTERNAL_SERVER_ERROR);
+      return new ResponseEntity<> (HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 //@formatter:on
@@ -135,14 +135,14 @@ public class OrdersController {
     
       
       if (rs == 0) {
-        return new ResponseEntity<>("no order available yet for the customer ",HttpStatus.NOT_FOUND) ;
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND) ;
       }
         
      
-        return new ResponseEntity<>("order was deleted successfully ", HttpStatus.CREATED) ;
+        return new ResponseEntity<>( HttpStatus.CREATED) ;
       
     } catch (Exception e) {
-      return new ResponseEntity<> ("An unplanned error occured", HttpStatus.INTERNAL_SERVER_ERROR);
+      return new ResponseEntity<> ( HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 //@formatter:on
