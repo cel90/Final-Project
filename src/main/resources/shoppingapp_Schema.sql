@@ -30,6 +30,6 @@ product_id int unsigned NOT NULL,
 CREATE TABLE products (
 product_id int unsigned NOT NULL AUTO_INCREMENT primary key,
 product_name varchar(45) NOT NULL,
-product_desc text NOT NULL 
+product_price double 
 )
 
